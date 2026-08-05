@@ -2,7 +2,7 @@ import {test, expect, Locator} from "@playwright/test";
 
 // Input Box
 test("Verify Input Box", async ({page})=>{
-    await page.goto('file:///C:/GitHub%20Practice/Practice_Site/index.html');
+    await page.goto('/index.html');
 
     const name:Locator=page.locator('#nameInput');
 
