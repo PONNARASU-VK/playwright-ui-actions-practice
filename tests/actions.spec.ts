@@ -2,7 +2,7 @@ import {test, expect, Locator} from "@playwright/test";
 
 // Input Box
 test("Verify Input Box", async ({page})=>{
-    await page.goto('/index.html');
+    await page.goto('https://playwright-html-actions.netlify.app/');
 
     const name:Locator=page.locator('#nameInput');
 

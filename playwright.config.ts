@@ -16,16 +16,16 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
- forbidOnly: false,
+ forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: 0,
+  retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: undefined,
+  workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 use: {
-  baseURL: 'http://localhost:3000',
+  // baseURL: 'http://localhost:3000',
   trace: 'on-first-retry',
 },
 
@@ -68,9 +68,9 @@ use: {
   ],
 
   /* Run your local dev server before starting the tests */
-webServer: {
-  command: 'npx http-server ./Practice_Site -p 3000',
-  port: 3000,
-  reuseExistingServer: true,
-},
+// webServer: {
+//   command: 'npm run start',
+//   url: 'http://localhost:3000',
+//   reuseExistingServer: !process.env.CI,
+// },
 });
