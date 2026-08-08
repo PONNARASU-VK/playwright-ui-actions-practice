@@ -17,7 +17,7 @@ test("Verify Input Box", async ({page})=>{
 });
 
 // Radio Buttons
-test.only("Verify Radio Buttons", async ({page})=>{
+test("Verify Radio Buttons", async ({page})=>{
     await page.goto('https://playwright-html-actions.netlify.app/');
     const Beginner:Locator=page.locator('#expBeginner');
     const Intermediate:Locator=page.locator('#expIntermediate');
