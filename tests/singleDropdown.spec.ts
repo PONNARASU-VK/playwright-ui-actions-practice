@@ -9,7 +9,7 @@ test("verify the dropdowns", async ({ page }) => {
 
     // Verify selected option
     await expect(page.locator('#countrySelect'))
-        .toHaveValue('India')
+        .toHaveValue('IN')
 
     // Count the options
     const options: Locator = page.locator('#countrySelect option')
